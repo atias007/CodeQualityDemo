@@ -18,7 +18,7 @@ namespace CodeQualityClass1
             foreach (var item in items)
             {
                 //Simulating long running operation
-                Thread.Sleep(1);
+                Thread.Sleep(3);
             }
         }
 
@@ -30,8 +30,20 @@ namespace CodeQualityClass1
             Parallel.ForEach(items, (item) =>
             {
                 //Simulating long running operation
-                Thread.Sleep(1);
+                Thread.Sleep(3);
             });
         }
+
+        #region Result
+
+        /*
+         
+            |              Method |       Mean |    Error |   StdDev |
+            |-------------------- |-----------:|---------:|---------:|
+            |         ForeachTest | 1,565.7 ms |  5.63 ms |  4.70 ms |
+            | ParallelForeachTest |   106.2 ms | 14.40 ms | 42.45 ms |
+         */
+
+        #endregion
     }
 }

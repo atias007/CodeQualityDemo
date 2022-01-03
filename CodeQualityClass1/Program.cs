@@ -10,9 +10,12 @@ namespace CodeQualityClass1
         static void Main(string[] args)
         {
 
-            //var summary = BenchmarkRunner.Run<Materializing>();
-            //var summary = BenchmarkRunner.Run<LinearSearch>();
-            //var summary = BenchmarkRunner.Run<Parallelization>();
+            //BenchmarkRunner.Run<Materializing>();
+            BenchmarkRunner.Run<LinearSearch>();
+            // BenchmarkRunner.Run<Parallelization>();
+            // BenchmarkRunner.Run<TextBuilder>();
+            // BenchmarkRunner.Run<StructClass>();
+            // BenchmarkRunner.Run<Capacity>();
 
             //TaskDemo();
         }
