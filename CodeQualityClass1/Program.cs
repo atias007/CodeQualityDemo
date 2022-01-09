@@ -9,9 +9,10 @@ namespace CodeQualityClass1
     {
         static void Main(string[] args)
         {
+            new Materializing().NotMaterializedQueryTest();
 
             //BenchmarkRunner.Run<Materializing>();
-            BenchmarkRunner.Run<LinearSearch>();
+            //BenchmarkRunner.Run<LinearSearch>();
             // BenchmarkRunner.Run<Parallelization>();
             // BenchmarkRunner.Run<TextBuilder>();
             // BenchmarkRunner.Run<StructClass>();
