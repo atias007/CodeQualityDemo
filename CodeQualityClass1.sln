@@ -1,13 +1,17 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31410.357
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32112.339
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeQualityClass1", "CodeQualityClass1\CodeQualityClass1.csproj", "{939A92D3-C7BF-4E22-8D32-18AE74FC002C}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeQualityClass2", "CodeQualityClass2\CodeQualityClass2.csproj", "{525FBE6B-03D9-480D-BC5B-2CFB2FD5DE4B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskClass", "TaskClass\TaskClass.csproj", "{59A782A5-C961-4FD2-A233-6A30F26FEFDC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaskClass", "TaskClass\TaskClass.csproj", "{59A782A5-C961-4FD2-A233-6A30F26FEFDC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsyncAwait", "AsyncAwait\AsyncAwait.csproj", "{7B99CB89-DF8E-4270-AE5E-A65D9D3ECF61}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesignPatterns", "DesignPatterns\DesignPatterns.csproj", "{8C0A36AA-1E79-4131-A8FB-8CC51ED2A598}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +31,14 @@ Global
 		{59A782A5-C961-4FD2-A233-6A30F26FEFDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{59A782A5-C961-4FD2-A233-6A30F26FEFDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{59A782A5-C961-4FD2-A233-6A30F26FEFDC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B99CB89-DF8E-4270-AE5E-A65D9D3ECF61}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B99CB89-DF8E-4270-AE5E-A65D9D3ECF61}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B99CB89-DF8E-4270-AE5E-A65D9D3ECF61}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B99CB89-DF8E-4270-AE5E-A65D9D3ECF61}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8C0A36AA-1E79-4131-A8FB-8CC51ED2A598}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C0A36AA-1E79-4131-A8FB-8CC51ED2A598}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C0A36AA-1E79-4131-A8FB-8CC51ED2A598}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C0A36AA-1E79-4131-A8FB-8CC51ED2A598}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
