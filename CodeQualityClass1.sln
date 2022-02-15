@@ -9,9 +9,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeQualityClass2", "CodeQu
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaskClass", "TaskClass\TaskClass.csproj", "{59A782A5-C961-4FD2-A233-6A30F26FEFDC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsyncAwait", "AsyncAwait\AsyncAwait.csproj", "{7B99CB89-DF8E-4270-AE5E-A65D9D3ECF61}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AsyncAwait", "AsyncAwait\AsyncAwait.csproj", "{7B99CB89-DF8E-4270-AE5E-A65D9D3ECF61}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesignPatterns", "DesignPatterns\DesignPatterns.csproj", "{8C0A36AA-1E79-4131-A8FB-8CC51ED2A598}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DesignPatterns", "DesignPatterns\DesignPatterns.csproj", "{8C0A36AA-1E79-4131-A8FB-8CC51ED2A598}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskClass2", "TaskClass2\TaskClass2.csproj", "{E6A802C2-92CD-4AB6-B891-81773F5B3325}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{8C0A36AA-1E79-4131-A8FB-8CC51ED2A598}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8C0A36AA-1E79-4131-A8FB-8CC51ED2A598}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8C0A36AA-1E79-4131-A8FB-8CC51ED2A598}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E6A802C2-92CD-4AB6-B891-81773F5B3325}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E6A802C2-92CD-4AB6-B891-81773F5B3325}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E6A802C2-92CD-4AB6-B891-81773F5B3325}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E6A802C2-92CD-4AB6-B891-81773F5B3325}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
