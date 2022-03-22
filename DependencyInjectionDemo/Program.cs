@@ -85,6 +85,8 @@ namespace DependencyInjectionDemo
             services.AddTransient<ICacheUtil, RedisCacheUtil>();
             services.AddTransient<IQueueUtil, QueueUtil>();
             services.AddSingleton<ILogger, ElasticLogger>();
+            
+            services.AddTransient<Person4>();
         }
     }
 }
