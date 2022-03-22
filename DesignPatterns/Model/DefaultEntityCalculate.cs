@@ -7,5 +7,10 @@
         {
             return default;
         }
+
+        public object Calculate(TEntity entity, string propertyName)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }
