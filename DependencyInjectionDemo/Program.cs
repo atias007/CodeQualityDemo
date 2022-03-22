@@ -53,7 +53,7 @@ namespace DependencyInjectionDemo
             var cacheUtil = new CacheUtil();
             var queueUtil = new QueueUtil();
             #region Redis
-            var cahceUtil = new RedisCacheUtil();
+            // var cahceUtil = new RedisCacheUtil();
             #endregion
             var logger2 = new ElasticLogger(cacheUtil, queueUtil);
             #region DifferentLogger
