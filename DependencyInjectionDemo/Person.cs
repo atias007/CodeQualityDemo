@@ -99,10 +99,15 @@ namespace DependencyInjectionDemo
             try
             {
                 // Do Something
+                _logger.LogInformation("Start do something");
+                if(string.IsNullOrEmpty(FirstName))
+                {
+                    throw new ApplicationException("FirstName is null or empty");
+                }
             }
             catch (Exception ex)
             {
-                _logger.Log<Person1>(LogLevel.Error, new EventId(-1), null, ex, null);
+                _logger.LogError(ex, "Fail to do something");
                 throw;
             }
         }
