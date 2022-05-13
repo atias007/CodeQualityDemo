@@ -6,16 +6,15 @@ namespace CodeQualityClass1
 {
     public class LinearSearch
     {
-        HashSet<int> _userIds;
-        IEnumerable<int> _userIds2;
-        Dictionary<int, int> _dict;
+        private HashSet<int> _userIds;
+        private IEnumerable<int> _userIds2;
+        private Dictionary<int, int> _dict;
 
         public LinearSearch()
         {
             _userIds2 = Enumerable.Range(0, 10000000);
             _userIds = Enumerable.Range(0, 10000000).ToHashSet();
             _dict = Enumerable.Range(0, 10000000).ToDictionary(k => k);
-
         }
 
         [Benchmark]
@@ -45,7 +44,6 @@ namespace CodeQualityClass1
         [Benchmark]
         public void HashSetTest()
         {
-
             int userIdToFind = 9193513;
 
             var userExists = _userIds.Contains(userIdToFind);
@@ -55,14 +53,15 @@ namespace CodeQualityClass1
 
         /*
 
-        |            Method |              Mean |             Error |            StdDev |            Median |
-        |------------------ |------------------:|------------------:|------------------:|------------------:|
-        | LinearSearchTestA | 82,569,229.155 ns | 2,892,761.6939 ns |  8,438,321.640 ns | 79,967,785.714 ns |
-        | LinearSearchTestC | 71,095,910.431 ns | 3,738,270.7031 ns | 10,904,711.106 ns | 67,941,494.444 ns |
-        |       HashSetTest |          8.216 ns |         0.5803 ns |          1.702 ns |          7.865 ns |
+        |                 Method |              Mean |             Error |            StdDev |            Median |
+        |----------------------- |------------------:|------------------:|------------------:|------------------:|
+        |      LinearSearchTestA | 64,150,070.417 ns | 1,222,124.7194 ns | 3,198,087.3811 ns | 63,455,283.333 ns |
+        |      LinearSearchTestC | 46,158,034.545 ns |   800,636.2818 ns | 1,068,826.4394 ns | 45,903,781.818 ns |
+        | LinearSearchDictionary |          6.820 ns |         0.1655 ns |         0.4303 ns |          6.678 ns |
+        |            HashSetTest |          5.837 ns |         0.1922 ns |         0.5261 ns |          5.692 ns |
 
-        */
+         */
 
-        #endregion
+        #endregion Result
     }
 }

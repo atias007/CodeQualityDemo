@@ -18,6 +18,17 @@ namespace CodeQualityClass1
         }
 
         [Benchmark]
+        public void StringTestFormat()
+        {
+            var items = Enumerable.Range(0, 100000).ToList();
+            string result = string.Empty;
+            foreach (var item in items)
+            {
+                result = $"{result}\r\n{item}";
+            }
+        }
+
+        [Benchmark]
         public void StringBuilderTest()
         {
             var items = Enumerable.Range(0, 100000).ToList();
@@ -29,8 +40,9 @@ namespace CodeQualityClass1
 
             var result = sb.ToString();
         }
-        
+
         #region result
+
         /*
 
             |            Method |          Mean |         Error |        StdDev |        Median |
@@ -39,6 +51,7 @@ namespace CodeQualityClass1
             | StringBuilderTest |      8.459 ms |     0.2172 ms |     0.6372 ms |      8.324 ms |
 
         */
-        #endregion
+
+        #endregion result
     }
 }

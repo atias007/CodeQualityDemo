@@ -5,23 +5,23 @@ using System.Threading.Tasks;
 
 namespace CodeQualityClass1
 {
-    class Program
+    internal class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
-            new Materializing().NotMaterializedQueryTest();
+            //new Materializing().NotMaterializedQueryTest();
 
             //BenchmarkRunner.Run<Materializing>();
             //BenchmarkRunner.Run<LinearSearch>();
             // BenchmarkRunner.Run<Parallelization>();
-            // BenchmarkRunner.Run<TextBuilder>();
+            BenchmarkRunner.Run<TextBuilder>();
             // BenchmarkRunner.Run<StructClass>();
             // BenchmarkRunner.Run<Capacity>();
 
             //TaskDemo();
         }
 
-        static void TaskDemo()
+        private static void TaskDemo()
         {
             var t1 = Task.Run(() =>
             {

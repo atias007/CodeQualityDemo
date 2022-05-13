@@ -5,7 +5,6 @@ namespace CodeQualityClass1
 {
     public class Capacity
     {
-
         [Benchmark]
         public void NonFixedCapacityTest()
         {
@@ -36,6 +35,6 @@ namespace CodeQualityClass1
             |    FixedCapacityTest |  7.376 ms | 0.1471 ms | 0.3349 ms |  7.413 ms |
          */
 
-        #endregion
+        #endregion Result
     }
 }

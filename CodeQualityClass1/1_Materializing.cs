@@ -1,10 +1,5 @@
 ﻿using BenchmarkDotNet.Attributes;
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CodeQualityClass1
 {
@@ -36,7 +31,7 @@ namespace CodeQualityClass1
         [Benchmark]
         public void MaterializedQueryTest()
         {
-            var elements = Enumerable.Range(0, 50000000);           
+            var elements = Enumerable.Range(0, 50000000);
 
             var filteredElements = elements.Where(element => element % 100000 == 0).ToList();
 
@@ -55,5 +50,18 @@ namespace CodeQualityClass1
                 //another logic
             }
         }
+
+        #region Result
+
+        /*
+
+        |                   Method |       Mean |    Error |   StdDev |     Median |
+        |------------------------- |-----------:|---------:|---------:|-----------:|
+        | NotMaterializedQueryTest | 1,147.2 ms | 27.19 ms | 74.44 ms | 1,122.5 ms |
+        |    MaterializedQueryTest |   359.8 ms |  7.79 ms | 22.85 ms |   354.2 ms |
+
+         */
+
+        #endregion Result
     }
 }
