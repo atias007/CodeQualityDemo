@@ -17,7 +17,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaskClass2", "TaskClass2\Ta
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApiDemo", "WebApiDemo\WebApiDemo.csproj", "{46E58D02-E741-4E1D-B94D-3F29662A90E2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DependencyInjectionDemo", "DependencyInjectionDemo\DependencyInjectionDemo.csproj", "{9A1F7BE0-530D-4FD5-9E9E-8B8479F0CF61}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DependencyInjectionDemo", "DependencyInjectionDemo\DependencyInjectionDemo.csproj", "{9A1F7BE0-530D-4FD5-9E9E-8B8479F0CF61}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntityFrameworkDemo", "EntityFrameworkDemo\EntityFrameworkDemo.csproj", "{690921C7-568E-4D40-B43A-D9FE4B41FAB2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,6 +59,10 @@ Global
 		{9A1F7BE0-530D-4FD5-9E9E-8B8479F0CF61}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9A1F7BE0-530D-4FD5-9E9E-8B8479F0CF61}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9A1F7BE0-530D-4FD5-9E9E-8B8479F0CF61}.Release|Any CPU.Build.0 = Release|Any CPU
+		{690921C7-568E-4D40-B43A-D9FE4B41FAB2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{690921C7-568E-4D40-B43A-D9FE4B41FAB2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{690921C7-568E-4D40-B43A-D9FE4B41FAB2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{690921C7-568E-4D40-B43A-D9FE4B41FAB2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

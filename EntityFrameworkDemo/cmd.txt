@@ -1,0 +1,1 @@
+﻿Scaffold-DbContext -Connection "Password=CustomsDev123!;Persist Security Info=True;User ID=sa;Initial Catalog=Northwind;Data Source=localhost" -Provider "Microsoft.EntityFrameworkCore.SqlServer" -OutputDir "Models" -Force
