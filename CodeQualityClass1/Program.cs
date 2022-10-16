@@ -14,10 +14,10 @@ namespace CodeQualityClass1
             //BenchmarkRunner.Run<Materializing>();
             //BenchmarkRunner.Run<LinearSearch>();
             // BenchmarkRunner.Run<Parallelization>();
-            BenchmarkRunner.Run<TextBuilder>();
+            //BenchmarkRunner.Run<TextBuilder>();
             // BenchmarkRunner.Run<StructClass>();
             // BenchmarkRunner.Run<Capacity>();
-
+            BenchmarkRunner.Run<SealedClass>();
             //TaskDemo();
         }
 
