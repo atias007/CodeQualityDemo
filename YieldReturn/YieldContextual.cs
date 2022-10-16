@@ -12,8 +12,8 @@ namespace YieldReturn
             foreach (var i in list)
             {
                 Console.Write("*"); // Code to prove that this run only during its turn in the iteration (loop) after this method is called
-
-                yield return i * 2;
+                var value = i * 2;
+                yield return value;
             }
         }
 
@@ -27,6 +27,7 @@ namespace YieldReturn
                     break;
                 }
 
+                Console.Write("*");
                 yield return i * 2;
             }
 

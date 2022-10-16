@@ -48,6 +48,8 @@ namespace EntityFrameworkDemo
             };
 
             context.Categories.Add(newCategory);
+            // var result = await context.Categories.AddAsync(newCategory);
+
             var effectedRows = context.SaveChanges();
             Console.WriteLine($"{effectedRows} row(s) effectged. CategoryID = {newCategory.CategoryId}");
 

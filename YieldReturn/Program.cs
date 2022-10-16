@@ -11,19 +11,19 @@ var numbers = new List<int>
 
 #region Step1
 
-// var conventionalList = Conventional.GetDoubledNumbers(numbers);
-// var yieldList = YieldContextual.GetDoubledNumbers(numbers);
-// PrintNumbers("Print conventional list:", conventionalList);
-// PrintNumbers("Print yield list:", yieldList);
+//var conventionalList = Conventional.GetDoubledNumbers(numbers);
+//var yieldList = YieldContextual.GetDoubledNumbers(numbers);
+//PrintNumbers("Print conventional list:", conventionalList);
+//PrintNumbers("Print yield list:", yieldList);
 
 #endregion Step1
 
 #region Step2
 
-// var conventionalList = Conventional.GetDoubledNumbersIfMoreThanThreshhold(numbers, 5);
-// var yieldList = YieldContextual.GetDoubledNumbersIfMoreThanThreshhold(numbers, 5);
-// PrintNumbers("Print conventional list:", conventionalList);
-// PrintNumbers("Print yield list:", yieldList);
+//var conventionalList = Conventional.GetDoubledNumbersIfMoreThanThreshhold(numbers, 5);
+//var yieldList = YieldContextual.GetDoubledNumbersIfMoreThanThreshhold(numbers, 5);
+//PrintNumbers("Print conventional list:", conventionalList);
+//PrintNumbers("Print yield list:", yieldList);
 
 #endregion Step2
 
@@ -44,6 +44,7 @@ void PrintNumbers(string title, IEnumerable<int> list)
     Console.Write(title);
     foreach (var i in list)
     {
+        if (i > 10) { break; }
         Console.Write($"{i}, ");
     }
 }
