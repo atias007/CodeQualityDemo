@@ -1,4 +1,5 @@
 ﻿using BenchmarkDotNet.Attributes;
+using CommandLine;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -47,3 +48,8 @@ namespace CodeQualityClass1
         }
     }
 }
+
+////| Method            | Mean | Error | StdDev      | Median     | Allocated  |
+////| ----------------- | ----------  :| ---------- :| ----------:| ----------:| ----------:|
+////| MethodCall        | 0.4654 ns    | 0.0222 ns   | 0.0208 ns  | 0.4640 ns  | - |
+////| MethodCallSealed  | 0.1675 ns    | 0.0278 ns   | 0.0783 ns  | 0.1458 ns  | - |
