@@ -17,8 +17,10 @@ namespace CodeQualityClass1
             //BenchmarkRunner.Run<TextBuilder>();
             // BenchmarkRunner.Run<StructClass>();
             // BenchmarkRunner.Run<Capacity>();
-            BenchmarkRunner.Run<SealedClass>();
+            //BenchmarkRunner.Run<SealedClass>();
             //TaskDemo();
+
+            BenchmarkRunner.Run<CompileLinqExpressions>();
         }
 
         private static void TaskDemo()

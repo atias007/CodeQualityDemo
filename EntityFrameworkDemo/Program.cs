@@ -27,6 +27,10 @@ namespace EntityFrameworkDemo
 
             Console.WriteLine(category);
 
+            context.Set<Category>()
+                .Where(c => c.CategoryId == 1)
+                .UpdateFromQuery(c => new Category { CategoryName = "Lol" });
+
             Pause();
 
             using (var conn = new SqlConnection(@"Password=CustomsDev123!;Persist Security Info=True;User ID=sa;Initial Catalog=Northwind;Data Source=localhost"))

@@ -2,8 +2,8 @@
 {
     /*
         * Don’t Repeat yourself (DRY). Express a logic once in your code
-        * 
-        * Keep It Simple Stupid (KISS). Ask yourself, “can this code be written in a simpler way ?”
+        *
+        * Keep It Simple Stupid (KISS). Ask yourself, "can this code be written in a simpler way ?"
         * Single responsibility. Each function should only do one thing
         * You aren’t gonna need it (YAGNI). Do not add unnecessary codes you think you might need. Wait till you need it
         * Use proper names for variables, functions and classes to describe intent. Avoid using abbreviations or generic names. A function or class should do exactly what the name says
