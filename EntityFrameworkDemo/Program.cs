@@ -1,4 +1,7 @@
-﻿using Dapper;
+﻿using AutoMapper;
+using AutoMapper.QueryableExtensions;
+using Dapper;
+using EntityFrameworkDemo.Dto;
 using EntityFrameworkDemo.Models;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
@@ -19,6 +22,17 @@ namespace EntityFrameworkDemo
         private static async Task Main(string[] args)
         {
             var context = new NorthwindContext();
+
+            var configuration = new MapperConfiguration(cfg =>
+               cfg.CreateProjection<Category, CategotyDto>());
+            context.Set<Category>().ProjectTo<CategotyDto>(configuration).ToList();
+
+            Pause();
+
+            context.Set<Category>().ToList();
+
+            Pause();
+
             var category = await
                 context.Categories
                 .Where(c => c.CategoryId == 1)
@@ -27,10 +41,9 @@ namespace EntityFrameworkDemo
 
             Console.WriteLine(category);
 
-            context.Set<Category>()
-                .Where(c => c.CategoryId == 1)
-                .UpdateFromQuery(c => new Category { CategoryName = "Lol" });
+  
 
+           
             Pause();
 
             using (var conn = new SqlConnection(@"Password=CustomsDev123!;Persist Security Info=True;User ID=sa;Initial Catalog=Northwind;Data Source=localhost"))
