@@ -25,9 +25,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YieldReturn", "YieldReturn\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetCore6Improvements", "DotNetCore6Improvements\DotNetCore6Improvements.csproj", "{973DBE80-0D2F-4AEF-9CC9-30B7C657ACA0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiscDemo", "MiscDemo\MiscDemo.csproj", "{1E59419E-4FD8-4FF5-A593-B5694BC2B6F6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MiscDemo", "MiscDemo\MiscDemo.csproj", "{1E59419E-4FD8-4FF5-A593-B5694BC2B6F6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorAppDemo", "BlazorAppDemo\BlazorAppDemo.csproj", "{8C389332-BA37-47B7-9A69-2D76173E2E04}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RegexCrash", "RegexCrash\RegexCrash.csproj", "{E0C71CD4-D9E6-4FCF-80C9-24537498F0FC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -83,10 +83,10 @@ Global
 		{1E59419E-4FD8-4FF5-A593-B5694BC2B6F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1E59419E-4FD8-4FF5-A593-B5694BC2B6F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1E59419E-4FD8-4FF5-A593-B5694BC2B6F6}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8C389332-BA37-47B7-9A69-2D76173E2E04}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8C389332-BA37-47B7-9A69-2D76173E2E04}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8C389332-BA37-47B7-9A69-2D76173E2E04}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8C389332-BA37-47B7-9A69-2D76173E2E04}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E0C71CD4-D9E6-4FCF-80C9-24537498F0FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E0C71CD4-D9E6-4FCF-80C9-24537498F0FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E0C71CD4-D9E6-4FCF-80C9-24537498F0FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E0C71CD4-D9E6-4FCF-80C9-24537498F0FC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
