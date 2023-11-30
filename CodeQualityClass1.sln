@@ -27,7 +27,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetCore6Improvements", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MiscDemo", "MiscDemo\MiscDemo.csproj", "{1E59419E-4FD8-4FF5-A593-B5694BC2B6F6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RegexCrash", "RegexCrash\RegexCrash.csproj", "{E0C71CD4-D9E6-4FCF-80C9-24537498F0FC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RegexCrash", "RegexCrash\RegexCrash.csproj", "{E0C71CD4-D9E6-4FCF-80C9-24537498F0FC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedisTimeSeries", "RedisTimeSeries\RedisTimeSeries.csproj", "{BDBB9EC1-0A23-4C2A-A236-BCCC60D55AE6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -87,6 +89,10 @@ Global
 		{E0C71CD4-D9E6-4FCF-80C9-24537498F0FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E0C71CD4-D9E6-4FCF-80C9-24537498F0FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E0C71CD4-D9E6-4FCF-80C9-24537498F0FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BDBB9EC1-0A23-4C2A-A236-BCCC60D55AE6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BDBB9EC1-0A23-4C2A-A236-BCCC60D55AE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BDBB9EC1-0A23-4C2A-A236-BCCC60D55AE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BDBB9EC1-0A23-4C2A-A236-BCCC60D55AE6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
