@@ -7,7 +7,7 @@ var redis = ConnectionMultiplexer.Connect("localhost");
 var db = redis.GetDatabase();
 
 // Create
-////var label = new TimeSeriesLabel("region", "tel-aviv");
+var label = new TimeSeriesLabel("region", "tel-aviv");
 ////var retentionTime = Convert.ToInt32(TimeSpan.FromHours(1).TotalMilliseconds);
 ////db.TimeSeriesCreate("sensor1", retentionTime: retentionTime, labels: new List<TimeSeriesLabel> { label }, duplicatePolicy: TsDuplicatePolicy.MAX);
 

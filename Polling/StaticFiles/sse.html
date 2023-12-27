@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SSE Client</title>
+</head>
+<body>
+    <h1>Server-Sent Events Client</h1>
+    <script>
+        const eventSource = new EventSource('http://localhost:5125/polling/server-send-event');
+
+        eventSource.onmessage = function (event) {
+            console.log(event.data);
+        };
+    </script>
+</body>
+</html>
