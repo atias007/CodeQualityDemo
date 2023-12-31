@@ -38,7 +38,7 @@ namespace Polling.Controllers
                     return Ok();
                 }
 
-                await Task.Delay(1000, token);
+                await Task.Delay(100, token);
             }
 
             return NoContent();
@@ -68,6 +68,23 @@ namespace Polling.Controllers
                 }
                 await Task.Delay(100, token);
             }
+        }
+
+        [HttpPost("long-process")]
+        public async Task LongProcess(CancellationToken token)
+        {
+            await Console.Out.WriteLineAsync("start");
+            try
+            {
+                await Task.Delay(TimeSpan.FromSeconds(30), token);
+            }
+            catch (TaskCanceledException)
+            {
+                await Console.Out.WriteLineAsync("Cancel");
+                return;
+            }
+
+            await Console.Out.WriteLineAsync("end");
         }
     }
 }
