@@ -6,7 +6,7 @@ internal class Mission1 : BaseMission
     {
     }
 
-    public async Task Start()
+    public async Task Start(AutoResetEvent are)
     {
         Write("Start Mission 1");
         await Task.Delay(1000);
@@ -14,6 +14,9 @@ internal class Mission1 : BaseMission
         await Task.Delay(1000);
         Write("Step 2 Completed");
         await Task.Delay(2000);
+        Write("----- Wait to Mission2: Step 3 -----");
+
+        are.WaitOne();
         Write("Step 3 Completed");
         await Task.Delay(2000);
         Write("Step 4 Completed");
