@@ -3,6 +3,7 @@
 // host.docker.internal:7281/WeatherForecast
 
 using Microsoft.AspNetCore.RateLimiting;
+using System.Threading.RateLimiting;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -19,13 +20,18 @@ builder.Services.AddRateLimiter(rateOpt =>
     {
         rateOpt.AddFixedWindowLimiter(policyName: "fixed", options =>
         {
-            options.PermitLimit = 100;
+            options.PermitLimit = 50;
             options.Window = TimeSpan.FromSeconds(1);
-            //// options.QueueProcessingOrder = QueueProcessingOrder.OldestFirst;
-            //// options.QueueLimit = 0;
+            ////            options.QueueProcessingOrder = QueueProcessingOrder.OldestFirst;
+            ////            options.QueueLimit = 1;
         });
 
-        //// rateOpt.RejectionStatusCode = 429;
+        rateOpt.AddConcurrencyLimiter(policyName: "conc", opt =>
+        {
+            opt.PermitLimit = 10;
+        });
+
+        rateOpt.RejectionStatusCode = 429; // TooManyRequests
     });
 
 #endregion Depedency Injection
