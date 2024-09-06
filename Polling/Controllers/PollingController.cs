@@ -47,9 +47,9 @@ namespace Polling.Controllers
         [HttpGet("server-send-event")]
         public async Task ServerSendEvents(CancellationToken token)
         {
-            HttpContext.Response.Headers.Add("Content-Type", "text/event-stream");
+            HttpContext.Response.Headers.Append("Content-Type", "text/event-stream");
 
-            var cts = CancellationTokenSource.CreateLinkedTokenSource(token);
+            using var cts = CancellationTokenSource.CreateLinkedTokenSource(token);
             var count = -1;
 
             while (!cts.IsCancellationRequested)
@@ -58,13 +58,13 @@ namespace Polling.Controllers
                 if (running != count)
                 {
                     count = running;
-                    await HttpContext.Response.WriteAsync("event: message\n");
-                    await HttpContext.Response.WriteAsync("data: ");
+                    await HttpContext.Response.WriteAsync("event: message\n", cancellationToken: token);
+                    await HttpContext.Response.WriteAsync("data: ", cancellationToken: token);
                     var item = new SseData { Total = LongProcessUtil.Count, Message = $"there are {LongProcessUtil.Count} running items" };
-                    await JsonSerializer.SerializeAsync(HttpContext.Response.Body, item);
-                    await HttpContext.Response.WriteAsync($"\nid: {DateTime.Now.Ticks}");
-                    await HttpContext.Response.WriteAsync($"\n\n");
-                    await HttpContext.Response.Body.FlushAsync();
+                    await JsonSerializer.SerializeAsync(HttpContext.Response.Body, item, cancellationToken: token);
+                    await HttpContext.Response.WriteAsync($"\nid: {DateTime.Now.Ticks}", cancellationToken: token);
+                    await HttpContext.Response.WriteAsync($"\n\n", cancellationToken: token);
+                    await HttpContext.Response.Body.FlushAsync(token);
                 }
                 await Task.Delay(100, token);
             }
