@@ -6,7 +6,8 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-	  <ProjectReference Include="..\SampleGenerator2\SampleGenerator2.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false"  />
+	  <PackageReference Include="AutoDto" Version="2.1.0" />
+	  <PackageReference Include="SampleGenerator2" Version="1.2.0" />
+	  <PackageReference Include="System.Management" Version="6.0.0" />
 	</ItemGroup>
-
 </Project>
