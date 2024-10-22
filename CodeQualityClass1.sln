@@ -48,7 +48,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SourceGenerator", "SourceGe
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestSourceGenerator", "TestSourceGenerator\TestSourceGenerator.csproj", "{FCC2765A-6C18-4F1C-B4A4-922103EFF2FD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleGenerator2", "SampleGenerator2\SampleGenerator2.csproj", "{BA1BAA52-AECB-4EA9-912A-6D6595490548}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SampleGenerator2", "SampleGenerator2\SampleGenerator2.csproj", "{BA1BAA52-AECB-4EA9-912A-6D6595490548}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SqliteDemo", "SqliteDemo\SqliteDemo.csproj", "{6650C9E3-8BE2-475E-87CE-3DBACC67ECB3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -136,6 +138,10 @@ Global
 		{BA1BAA52-AECB-4EA9-912A-6D6595490548}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BA1BAA52-AECB-4EA9-912A-6D6595490548}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BA1BAA52-AECB-4EA9-912A-6D6595490548}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6650C9E3-8BE2-475E-87CE-3DBACC67ECB3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6650C9E3-8BE2-475E-87CE-3DBACC67ECB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6650C9E3-8BE2-475E-87CE-3DBACC67ECB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6650C9E3-8BE2-475E-87CE-3DBACC67ECB3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

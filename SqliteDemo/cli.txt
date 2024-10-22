@@ -1,0 +1,8 @@
+.help
+.open mydatabase.db
+select * from Person;
+insert into person values(3, 'cli tool');
+.mode json
+.mode column
+.mode markdown
+.mode box
