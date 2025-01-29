@@ -1,1 +1,1 @@
-﻿Scaffold-DbContext -Connection "Password=CustomsDev123!;Persist Security Info=True;User ID=sa;Initial Catalog=Northwind;Data Source=localhost" -Provider "Microsoft.EntityFrameworkCore.SqlServer" -OutputDir "Models" -Force
+﻿dotnet ef dbcontext scaffold "Password=CustomsDev123!;Persist Security Info=True;User ID=sa;Initial Catalog=Northwind;Data Source=localhost;Encrypt=False" Microsoft.EntityFrameworkCore.SqlServer --output-dir Models --force --project EntityFrameworkDemo

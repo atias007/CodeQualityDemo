@@ -1,16 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
 
-#nullable disable
+namespace EntityFrameworkDemo.Models;
 
-namespace EntityFrameworkDemo.Models
+public partial class ProductsByCategory
 {
-    public partial class ProductsByCategory
-    {
-        public string CategoryName { get; set; }
-        public string ProductName { get; set; }
-        public string QuantityPerUnit { get; set; }
-        public short? UnitsInStock { get; set; }
-        public bool Discontinued { get; set; }
-    }
+    public string CategoryName { get; set; }
+
+    public string ProductName { get; set; }
+
+    public string QuantityPerUnit { get; set; }
+
+    public short? UnitsInStock { get; set; }
+
+    public bool Discontinued { get; set; }
 }

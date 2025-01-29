@@ -1,14 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 
-#nullable disable
+namespace EntityFrameworkDemo.Models;
 
-namespace EntityFrameworkDemo.Models
+public partial class SummaryOfSalesByQuarter
 {
-    public partial class SummaryOfSalesByQuarter
-    {
-        public DateTime? ShippedDate { get; set; }
-        public int OrderId { get; set; }
-        public decimal? Subtotal { get; set; }
-    }
+    public DateTime? ShippedDate { get; set; }
+
+    public int OrderId { get; set; }
+
+    public decimal? Subtotal { get; set; }
 }

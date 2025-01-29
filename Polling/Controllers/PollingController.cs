@@ -50,6 +50,7 @@ namespace Polling.Controllers
             HttpContext.Response.Headers.Append("Content-Type", "text/event-stream");
 
             using var cts = CancellationTokenSource.CreateLinkedTokenSource(token);
+            cts.CancelAfter(TimeSpan.FromMinutes(5));
             var count = -1;
 
             while (!cts.IsCancellationRequested)
