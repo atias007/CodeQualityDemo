@@ -31,6 +31,8 @@ public partial class NorthwindContext : DbContext
 
     public virtual DbSet<Employee> Employees { get; set; }
 
+    public virtual DbSet<HiLoDemo> HiLoDemos { get; set; }
+
     public virtual DbSet<Invoice> Invoices { get; set; }
 
     public virtual DbSet<Order> Orders { get; set; }
@@ -265,6 +267,15 @@ public partial class NorthwindContext : DbContext
                             .HasMaxLength(20)
                             .HasColumnName("TerritoryID");
                     });
+        });
+
+        modelBuilder.Entity<HiLoDemo>(entity =>
+        {
+            entity.ToTable("HiLoDemo");
+
+            entity.Property(e => e.Title)
+                .IsRequired()
+                .HasMaxLength(50);
         });
 
         modelBuilder.Entity<Invoice>(entity =>
@@ -655,6 +666,7 @@ public partial class NorthwindContext : DbContext
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_Territories_Region");
         });
+        modelBuilder.HasSequence<int>("HiLoSequence").IncrementsBy(100);
 
         OnModelCreatingPartial(modelBuilder);
     }

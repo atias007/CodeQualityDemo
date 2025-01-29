@@ -23,6 +23,18 @@ namespace EntityFrameworkDemo
         {
             var context = new NorthwindContext();
 
+            // var customers = await context.Customers.ToListAsync();
+            // var customers = await context.Customers.IgnoreQueryFilters().ToListAsync();
+
+            ////for (int i = 0; i < 300; i++)
+            ////{
+            ////    var hilo = new HiLoDemo { Title = "Title" };
+            ////    context.HiLoDemos.Add(hilo);
+            ////    hilo.Title += $" {hilo.Id}";
+            ////}
+
+            await context.SaveChangesAsync();
+
             var configuration = new MapperConfiguration(cfg =>
                cfg.CreateProjection<Category, CategotyDto>());
             context.Set<Category>().ProjectTo<CategotyDto>(configuration).ToList();
@@ -41,9 +53,6 @@ namespace EntityFrameworkDemo
 
             Console.WriteLine(category);
 
-  
-
-           
             Pause();
 
             using (var conn = new SqlConnection(@"Password=CustomsDev123!;Persist Security Info=True;User ID=sa;Initial Catalog=Northwind;Data Source=localhost"))
