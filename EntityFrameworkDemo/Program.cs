@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using AutoMapper.QueryableExtensions;
 using Dapper;
+using Dapper.Contrib.Extensions;
 using EntityFrameworkDemo.Dto;
 using EntityFrameworkDemo.Models;
 using Microsoft.Data.SqlClient;
@@ -21,19 +22,26 @@ namespace EntityFrameworkDemo
 
         private static async Task Main(string[] args)
         {
-            var context = new NorthwindContext();
+            using var context = new NorthwindContext("Buenos Aires");
 
-            // var customers = await context.Customers.ToListAsync();
-            // var customers = await context.Customers.IgnoreQueryFilters().ToListAsync();
+            ///var customers = await context.Customers.ToListAsync();
+            //var customers = await context.Customers.IgnoreQueryFilters().ToListAsync();
 
-            ////for (int i = 0; i < 300; i++)
-            ////{
-            ////    var hilo = new HiLoDemo { Title = "Title" };
-            ////    context.HiLoDemos.Add(hilo);
-            ////    hilo.Title += $" {hilo.Id}";
-            ////}
+            for (int i = 0; i < 300; i++)
+            {
+                var hilo = new HiLoDemo { Title = "Title" };
+                context.HiLoDemos.Add(hilo);
+
+                hilo.Title += $" {hilo.Id}";
+            }
+
+            //var conn = context.Database.GetDbConnection();
+
+            ////conn.Insert(new HiLoDemo { Title = "Title" });
 
             await context.SaveChangesAsync();
+
+            // https://github.com/DapperLib/Dapper.Contrib
 
             var configuration = new MapperConfiguration(cfg =>
                cfg.CreateProjection<Category, CategotyDto>());
@@ -55,14 +63,14 @@ namespace EntityFrameworkDemo
 
             Pause();
 
-            using (var conn = new SqlConnection(@"Password=CustomsDev123!;Persist Security Info=True;User ID=sa;Initial Catalog=Northwind;Data Source=localhost"))
-            {
-                var allCategories = await conn.QueryAsync<Category>("SELECT CategoryId, Description FROM Categories");
-                foreach (var item in allCategories)
-                {
-                    Console.WriteLine($"{item.CategoryId} - {item.Description}");
-                }
-            }
+            ////using (var conn = new SqlConnection(@"Password=CustomsDev123!;Persist Security Info=True;User ID=sa;Initial Catalog=Northwind;Data Source=localhost"))
+            ////{
+            ////    var allCategories = await conn.QueryAsync<Category>("SELECT CategoryId, Description FROM Categories");
+            ////    foreach (var item in allCategories)
+            ////    {
+            ////        Console.WriteLine($"{item.CategoryId} - {item.Description}");
+            ////    }
+            ////}
 
             Pause();
 
@@ -82,7 +90,7 @@ namespace EntityFrameworkDemo
             Pause();
 
             context.Dispose();
-            context = new NorthwindContext();
+            //context = new NorthwindContext();
 
             var deletedCategoty = new Category { CategoryId = newCategory.CategoryId };
             context.Categories.Remove(deletedCategoty);
