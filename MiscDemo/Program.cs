@@ -1,9 +1,11 @@
 ﻿using MiscDemo;
 using System.Reflection.Emit;
 
-////var demo1 = new ProducerConsumer();
-////await demo1.Run();
-////Console.WriteLine("--- DONE ---");
+var demo1 = new ProducerConsumer();
+await demo1.Run();
+Console.WriteLine("--- DONE ---");
+
+return;
 
 CallerAttribute.Run();
 Console.WriteLine("--- DONE ---");
