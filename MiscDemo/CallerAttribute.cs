@@ -8,10 +8,10 @@ namespace MiscDemo
         {
             TraceMessage("Hello World!");
 
-            var myFirstValue = "Some Text";
-            Validate(myFirstValue);
+            var myFirstValue1 = "Some Text";
+            Validate(myFirstValue1);
 
-            var mySecondValue = "Some Text";
+            var mySecondValue = "Some Text 2";
             Validate(mySecondValue);
         }
 
