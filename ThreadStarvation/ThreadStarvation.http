@@ -1,0 +1,6 @@
+@ThreadStarvation_HostAddress = https://localhost:7154/
+
+GET https://localhost:7154/DiagScenario/taskwait
+Accept: application/json
+
+###
