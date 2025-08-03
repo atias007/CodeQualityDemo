@@ -1,4 +1,5 @@
 ﻿// Import packages
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
@@ -9,17 +10,24 @@ using Polly;
 using Polly.Retry;
 using SemanticKernel;
 
+var services = new ServiceCollection();
+services
+    .AddTransient<SupplierPlugin>()
+    .AddDbContext<NorthwindContext>(option => option.UseSqlServer("Password=CustomsDev123!;Persist Security Info=True;User ID=sa;Initial Catalog=Northwind;Data Source=localhost;Encrypt=false"), ServiceLifetime.Transient);
+
+var plugin = services.BuildServiceProvider().GetRequiredService<SupplierPlugin>();
+
 #region OpenAI Configuration
 
-//const string apiKey = "";
-//const string modelId = "gpt-4.1";
+var apiKey = Environment.GetEnvironmentVariable("OPEN_AI_API_KEY") ?? throw new ArgumentNullException(); ;
+const string modelId = "gpt-4.1";
 
 #endregion OpenAI Configuration
 
 #region Ollama Configuration
 
-const string modelId = "llama3.2";
-const string endpoint = "http://localhost:11434";
+// const string modelId = "llama3.2";
+// const string endpoint = "http://localhost:11434";
 
 #endregion Ollama Configuration
 
@@ -34,9 +42,9 @@ var handler = new HttpClientHandler
 using var httpClient = new HttpClient(handler);
 
 // Create a kernel with Azure OpenAI chat completion
-// OPENAI: var builder = Kernel.CreateBuilder().AddOpenAIChatCompletion(modelId, apiKey, httpClient: httpClient);
-// OLLAMA:
-var builder = Kernel.CreateBuilder().AddOllamaChatCompletion(modelId, new Uri(endpoint));
+// OPENAI:
+var builder = Kernel.CreateBuilder().AddOpenAIChatCompletion(modelId, apiKey, httpClient: httpClient);
+// OLLAMA: var builder = Kernel.CreateBuilder().AddOllamaChatCompletion(modelId, new Uri(endpoint));
 
 // Add enterprise components
 // builder.Services.AddLogging(services => services.AddConsole().SetMinimumLevel(LogLevel.Trace));
@@ -46,7 +54,7 @@ Kernel kernel = builder.Build();
 var chatCompletionService = kernel.GetRequiredService<IChatCompletionService>();
 
 // Add a plugin (the LightsPlugin class is defined below)
-kernel.Plugins.AddFromType<LightsPlugin>("Lights");
+kernel.Plugins.AddFromObject(plugin, "Suppliers");
 
 // Enable planning
 var openAIPromptExecutionSettings = new OpenAIPromptExecutionSettings

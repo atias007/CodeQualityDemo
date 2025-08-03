@@ -3,7 +3,7 @@ using OpenAI;
 using System.Text;
 using ChatMessage = Microsoft.Extensions.AI.ChatMessage;
 
-const string openAiApiKey = "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";
+var openAiApiKey = Environment.GetEnvironmentVariable("OPEN_AI_API_KEY") ?? throw new ArgumentNullException(); ;
 
 var chatAgent = new OpenAIClient(openAiApiKey).GetChatClient("gpt-4.1").AsIChatClient();
 ////var chatAgentOptions = new ChatOptions
