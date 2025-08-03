@@ -11,7 +11,7 @@ using SemanticKernel;
 
 #region OpenAI Configuration
 
-//const string apiKey = "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";
+//const string apiKey = "";
 //const string modelId = "gpt-4.1";
 
 #endregion OpenAI Configuration
