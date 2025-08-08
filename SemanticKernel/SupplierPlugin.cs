@@ -9,7 +9,7 @@ internal class SupplierPlugin(NorthwindContext context)
     [KernelFunction("get_suppliers")]
     [Description("Gets a list of all suppliers and their active status")]
     [return: Description("List of suppliers information")]
-    public async Task<List<Supplier>> GetLightsAsync()
+    public async Task<List<Supplier>> GetSuppliersAsync()
     {
         return await context.Suppliers.ToListAsync();
     }

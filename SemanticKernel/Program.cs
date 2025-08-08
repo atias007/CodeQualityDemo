@@ -29,15 +29,15 @@ using var httpClient = new HttpClient(handler);
 
 #region OpenAI Configuration
 
-var apiKey = Environment.GetEnvironmentVariable("OPEN_AI_API_KEY") ?? throw new ArgumentNullException(); ;
+var apiKey = Environment.GetEnvironmentVariable("OPEN_AI_API_KEY") ?? throw new ArgumentNullException();
 const string modelId = "gpt-4.1";
 
 #endregion OpenAI Configuration
 
 #region Ollama Configuration
 
-// const string modelId = "llama3.2";
-// const string endpoint = "http://localhost:11434";
+//const string modelId = "llama3.2";
+//const string endpoint = "http://localhost:11434";
 
 #endregion Ollama Configuration
 
@@ -49,15 +49,15 @@ var builder = Kernel
     .AddOpenAIChatCompletion(modelId, apiKey, httpClient: httpClient);
 
 // OLLAMA:
-// var builder = Kernel
-//      .CreateBuilder()
-//      .AddOllamaChatCompletion(modelId, new Uri(endpoint));
+//var builder = Kernel
+//     .CreateBuilder()
+//     .AddOllamaChatCompletion(modelId, new Uri(endpoint));
 
 #endregion Create Agent Builder
 
 #region Add Logging
 
-builder.Services.AddLogging(services => services.AddConsole().SetMinimumLevel(LogLevel.Trace));
+//builder.Services.AddLogging(services => services.AddConsole().SetMinimumLevel(LogLevel.Trace));
 
 #endregion Add Logging
 
@@ -67,6 +67,7 @@ var agent = builder.Build();
 
 //var chatResult = await agent.InvokePromptAsync("give me 5 leg exercises to do in gym");
 //Console.WriteLine(chatResult.ToString());
+//Console.ReadLine();
 
 #endregion Simple Chat1
 
