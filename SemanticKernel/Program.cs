@@ -5,6 +5,9 @@ using Microsoft.Extensions.Logging;
 using Microsoft.SemanticKernel;
 using Microsoft.SemanticKernel.ChatCompletion;
 using Microsoft.SemanticKernel.Connectors.OpenAI;
+using ModelContextProtocol.Client;
+using ModelContextProtocol.SemanticKernel;
+using ModelContextProtocol.SemanticKernel.Extensions;
 using Polly;
 using SemanticKernel;
 
@@ -85,8 +88,8 @@ var agent = builder.Build();
 
 var chatCompletionService = agent.GetRequiredService<IChatCompletionService>();
 
-var plugin = services.BuildServiceProvider().GetRequiredService<SupplierPlugin>();
-agent.Plugins.AddFromObject(plugin, "Suppliers");
+//var plugin = services.BuildServiceProvider().GetRequiredService<SupplierPlugin>();
+//agent.Plugins.AddFromObject(plugin, "Suppliers");
 
 // Enable planning
 var openAIPromptExecutionSettings = new OpenAIPromptExecutionSettings
@@ -95,6 +98,31 @@ var openAIPromptExecutionSettings = new OpenAIPromptExecutionSettings
 };
 
 #endregion Add Plugins
+
+#region Add MCP Server
+
+await using IMcpClient mcpClient = await McpClientFactory.CreateAsync(
+        new StdioClientTransport(new()
+        {
+            WorkingDirectory = @"R:\CodeQualityDemo\MCPServer",
+            Name = "SupplieMCPServer",
+            Command = "dotnet", // or other executable
+            Arguments = ["run", "--project", @"MCPServer.csproj"]
+        }));
+
+var tools = await mcpClient.ListToolsAsync();
+foreach (var tool in tools)
+{
+    // Console.WriteLine($"Tool: {tool.Name} - {tool.Description}");
+}
+
+#pragma warning disable SKEXP0001 // Type is for evaluation purposes only and is subject to change or removal in future updates. Suppress this diagnostic to proceed.
+agent.Plugins.AddFromFunctions("SupplieMCPServer", tools.Select(aiFunction => aiFunction.AsKernelFunction()));
+#pragma warning restore SKEXP0001 // Type is for evaluation purposes only and is subject to change or removal in future updates. Suppress this diagnostic to proceed.
+
+Console.ReadLine();
+
+#endregion Add MCP Server
 
 // Create a history store the conversation
 var history = new ChatHistory();
