@@ -27,10 +27,6 @@ namespace PricePredict
             [ColumnName(@"passenger_count")]
             public float Passenger_count { get; set; }
 
-            [LoadColumn(3)]
-            [ColumnName(@"trip_time_in_secs")]
-            public float Trip_time_in_secs { get; set; }
-
             [LoadColumn(4)]
             [ColumnName(@"trip_distance")]
             public float Trip_distance { get; set; }
@@ -61,9 +57,6 @@ namespace PricePredict
 
             [ColumnName(@"passenger_count")]
             public float Passenger_count { get; set; }
-
-            [ColumnName(@"trip_time_in_secs")]
-            public float Trip_time_in_secs { get; set; }
 
             [ColumnName(@"trip_distance")]
             public float Trip_distance { get; set; }

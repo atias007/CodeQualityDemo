@@ -2,7 +2,8 @@
 using PricePredict;
 using System.Globalization;
 
-// https://learn.microsoft.com/en-us/dotnet/machine-learning/tutorials/predict-prices
+// TaxiFare.Train(@"R:\CodeQualityDemo\PricePredict\TaxiFare.mlnet");
+
 // https://github.com/dotnet/machinelearning/tree/main/test/data
 // https://github.com/dotnet/machinelearning/blob/main/test/data/taxi-fare-test.csv
 // https://github.com/dotnet/machinelearning/blob/main/test/data/taxi-fare-train.csv
@@ -18,7 +19,6 @@ foreach (var item in records)
         Vendor_id = item.vendor_id,
         Rate_code = item.rate_code,
         Passenger_count = item.passenger_count,
-        Trip_time_in_secs = item.trip_time_in_secs,
         Trip_distance = item.trip_distance,
         Payment_type = item.payment_type,
     };
