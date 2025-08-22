@@ -2,6 +2,7 @@
 using PricePredict;
 using System.Globalization;
 
+// https://learn.microsoft.com/en-us/dotnet/machine-learning/tutorials/predict-prices
 // https://github.com/dotnet/machinelearning/tree/main/test/data
 // https://github.com/dotnet/machinelearning/blob/main/test/data/taxi-fare-test.csv
 // https://github.com/dotnet/machinelearning/blob/main/test/data/taxi-fare-train.csv
