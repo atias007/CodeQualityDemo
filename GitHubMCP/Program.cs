@@ -74,10 +74,10 @@ agent.Plugins.AddFromFunctions("FS", tools2.Select(aiFunction => aiFunction.AsKe
 
 #region 5. DEMO: list MCP tools
 
-foreach (var tool in tools2)
-{
-    Console.WriteLine($"Tool: {tool.Name} - {tool.Description}");
-}
+////foreach (var tool in tools1)
+////{
+////    Console.WriteLine($"Tool: {tool.Name} - {tool.Description}");
+////}
 
 #endregion 5. DEMO: list MCP tools
 
