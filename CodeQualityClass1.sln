@@ -75,6 +75,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PricePredict", "PricePredic
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaxiFareManual", "TaxiFareManual\TaxiFareManual.csproj", "{1A5191F3-59B6-43AB-B66F-A39B9CC236F8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnomalyDetection", "AnomalyDetection\AnomalyDetection.csproj", "{922DA210-D386-4D7B-A054-339791B54E32}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -201,6 +203,10 @@ Global
 		{1A5191F3-59B6-43AB-B66F-A39B9CC236F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1A5191F3-59B6-43AB-B66F-A39B9CC236F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1A5191F3-59B6-43AB-B66F-A39B9CC236F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{922DA210-D386-4D7B-A054-339791B54E32}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{922DA210-D386-4D7B-A054-339791B54E32}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{922DA210-D386-4D7B-A054-339791B54E32}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{922DA210-D386-4D7B-A054-339791B54E32}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -216,6 +222,7 @@ Global
 		{6C6D7FE4-747F-4BC1-ADF1-6F052722BF40} = {408A7193-1A4E-4CA1-8DD8-3FACB9D46E3F}
 		{51270EE7-57E3-43E2-B1BC-5577BA896720} = {408A7193-1A4E-4CA1-8DD8-3FACB9D46E3F}
 		{1A5191F3-59B6-43AB-B66F-A39B9CC236F8} = {408A7193-1A4E-4CA1-8DD8-3FACB9D46E3F}
+		{922DA210-D386-4D7B-A054-339791B54E32} = {408A7193-1A4E-4CA1-8DD8-3FACB9D46E3F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B495776A-36F6-44BB-97A3-29D3A6670E4C}
