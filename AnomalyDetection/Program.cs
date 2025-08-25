@@ -24,7 +24,11 @@ static void DetectSpike(MLContext mlContext, int size, IDataView dataView)
     Console.WriteLine("===============Detect temporary changes in pattern===============");
 
     //STEP 1: Create Esimtator
-    var estimator = mlContext.Transforms.DetectIidSpike(outputColumnName: nameof(ProductSalesPrediction.Prediction), inputColumnName: nameof(ProductSalesData.numSales), confidence: 95, pvalueHistoryLength: size / 4);
+    var estimator = mlContext.Transforms.DetectIidSpike(
+        outputColumnName: nameof(ProductSalesPrediction.Prediction),
+        inputColumnName: nameof(ProductSalesData.numSales),
+        confidence: 95.0, // Use double for confidence
+        pvalueHistoryLength: size / 4);
 
     //STEP 2:The Transformed Model.
     //In IID Spike detection, we don't need to do training, we just need to do transformation.
@@ -56,7 +60,11 @@ static void DetectChangepoint(MLContext mlContext, int size, IDataView dataView)
     Console.WriteLine("===============Detect Persistent changes in pattern===============");
 
     //STEP 1: Setup transformations using DetectIidChangePoint
-    var estimator = mlContext.Transforms.DetectIidChangePoint(outputColumnName: nameof(ProductSalesPrediction.Prediction), inputColumnName: nameof(ProductSalesData.numSales), confidence: 95, changeHistoryLength: size / 4);
+    var estimator = mlContext.Transforms.DetectIidChangePoint(
+        outputColumnName: nameof(ProductSalesPrediction.Prediction),
+        inputColumnName: nameof(ProductSalesData.numSales),
+        confidence: 95,
+        changeHistoryLength: size / 4);
 
     //STEP 2:The Transformed Model.
     //In IID Change point detection, we don't need need to do training, we just need to do transformation.
