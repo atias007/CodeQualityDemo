@@ -1,0 +1,54 @@
+﻿@page "/rabbitmq-extract"
+@rendermode InteractiveServer
+
+<h3>RabbitMQ Extract</h3>
+
+<hr />
+
+<div class="mb-3">
+    <label class="form-label">Queue Name:</label>
+    <select class="form-select" aria-label="Default select example" @bind="SelectedQueue">
+        @foreach (var queue in QueueNames)
+        {
+            <option value="@queue">@queue</option>
+        }
+    </select>
+</div>
+
+<div class="mb-3">
+    <label for="basic-url" class="form-label">Target Queue:</label>
+    <input type="text" class="form-control" id="basic-url" @bind="SpecificQueue" aria-describedby="basic-addon3 basic-addon4">
+    <div class="form-text" id="basic-addon4">Optionally: use this field to specify specific traget queue filter</div>
+</div>
+
+<div class="form-check form-switch">
+	<input class="form-check-input" @bind="AutoAcknowledge" type="checkbox" role="switch" id="switchCheckDefault">
+    <label class="form-check-label" for="switchCheckDefault">Auto Acknowledge</label>
+</div>
+
+<div style="margin-top: 10px;">
+    <button @onclick="StartQueue" class="btn btn-primary">Start Extract Queue</button>
+</div>
+
+<div style="margin-top: 20px;">
+    <p style="background: black; color: lime; padding: 15px; font-family: 'Courier New', Courier, monospace;">
+        @ProgressText
+    </p>
+</div>
+
+@code {
+    private List<string> QueueNames = new() { "Alpha", "Beta", "Gamma", "Delta", "Epsilon" };
+    private string SelectedQueue = "Alpha";
+    private bool AutoAcknowledge = true;
+    private string SpecificQueue = string.Empty;
+    private string ProgressText = "Ready.";
+
+    private void StartQueue()
+    {
+        ProgressText = $"Started queue '{SelectedQueue}' (AutoAck: {AutoAcknowledge})";
+        if (!string.IsNullOrWhiteSpace(SpecificQueue))
+        {
+            ProgressText += $" - Specific: '{SpecificQueue}'";
+        }
+    }
+}
