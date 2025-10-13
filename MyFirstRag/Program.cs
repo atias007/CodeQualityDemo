@@ -1,8 +1,4 @@
-﻿using Microsoft.SemanticKernel;
-using Microsoft.SemanticKernel.Embeddings;
-using MyFirstRag;
-using System.Net.Http.Json;
-using System.Text.Json;
+﻿using MyFirstRag;
 
 const string pdfPath = @"c:\temp\coffee_machine.pdf";
 
