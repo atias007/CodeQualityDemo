@@ -2,7 +2,7 @@
 using LangChain.Providers.OpenAI;
 using LangChain.Providers.OpenAI.Predefined;
 
-var openAiApiKey = Environment.GetEnvironmentVariable("OPEN_AI_API_KEY") ?? throw new ArgumentNullException(); ;
+var openAiApiKey = Environment.GetEnvironmentVariable("OPEN_AI_API_KEY") ?? throw new ArgumentNullException();
 
 var provider = new OpenAiProvider(openAiApiKey);
 var llm = new OpenAiLatestFastChatModel(provider);

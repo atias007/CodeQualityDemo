@@ -1,54 +1,68 @@
 ﻿@page "/rabbitmq-extract"
+@using System.Threading.Tasks
+@using System.Net
 @rendermode InteractiveServer
 
 <h3>RabbitMQ Extract</h3>
 
 <hr />
+<div style="width: 400px">
+    <div class="mb-3">
+        <label class="form-label">Queue Name:</label>
+        <select class="form-select" aria-label="Default select example" @bind="SelectedQueue">
+            @foreach (var queue in QueueNames)
+            {
+                <option value="@queue">@queue</option>
+            }
+        </select>
+    </div>
+    <div class="mb-3">
+        <label for="basic-url" class="form-label">Target Queue:</label>
+        <input type="text" class="form-control" id="basic-url" @bind="SpecificQueue" aria-describedby="basic-addon3 basic-addon4">
+        <div class="form-text" id="basic-addon4">optional: use this field to filter specific traget queue</div>
+    </div>
 
-<div class="mb-3">
-    <label class="form-label">Queue Name:</label>
-    <select class="form-select" aria-label="Default select example" @bind="SelectedQueue">
-        @foreach (var queue in QueueNames)
-        {
-            <option value="@queue">@queue</option>
-        }
-    </select>
+    <div class="form-check form-switch mb-3">
+	    <input class="form-check-input" @bind="AutoAcknowledge" type="checkbox" role="switch" id="switchCheckDefault">
+        <label class="form-check-label" for="switchCheckDefault">Auto Acknowledge</label>
+    </div>
+
+    <div class="mb-3">
+        <button @onclick="StartQueue" class="btn btn-primary">Start Extract Queue</button>
+    </div>
 </div>
 
-<div class="mb-3">
-    <label for="basic-url" class="form-label">Target Queue:</label>
-    <input type="text" class="form-control" id="basic-url" @bind="SpecificQueue" aria-describedby="basic-addon3 basic-addon4">
-    <div class="form-text" id="basic-addon4">Optionally: use this field to specify specific traget queue filter</div>
+<div hidden="@(!IsProcessing.GetValueOrDefault())" class="mb-3 w-25">
+    <div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="@ProgressValue" aria-valuemin="0" aria-valuemax="100">
+        <div class="progress-bar" style="width: @ProgressValue%"></div>
+    </div>
 </div>
 
-<div class="form-check form-switch">
-	<input class="form-check-input" @bind="AutoAcknowledge" type="checkbox" role="switch" id="switchCheckDefault">
-    <label class="form-check-label" for="switchCheckDefault">Auto Acknowledge</label>
-</div>
-
-<div style="margin-top: 10px;">
-    <button @onclick="StartQueue" class="btn btn-primary">Start Extract Queue</button>
-</div>
-
-<div style="margin-top: 20px;">
-    <p style="background: black; color: lime; padding: 15px; font-family: 'Courier New', Courier, monospace;">
-        @ProgressText
-    </p>
-</div>
+@if (IsProcessing != null && IsProcessing == false)
+{
+    <div class="alert alert-success w-25" role="alert">
+        A simple success alert—check it out!
+    </div>
+}
 
 @code {
     private List<string> QueueNames = new() { "Alpha", "Beta", "Gamma", "Delta", "Epsilon" };
     private string SelectedQueue = "Alpha";
     private bool AutoAcknowledge = true;
     private string SpecificQueue = string.Empty;
-    private string ProgressText = "Ready.";
+    private int ProgressValue = 0;
+    private bool? IsProcessing = null;
 
-    private void StartQueue()
+    private async Task StartQueue()
     {
-        ProgressText = $"Started queue '{SelectedQueue}' (AutoAck: {AutoAcknowledge})";
-        if (!string.IsNullOrWhiteSpace(SpecificQueue))
+        IsProcessing = true;
+        for (int i = 0; i < 10; i++)
         {
-            ProgressText += $" - Specific: '{SpecificQueue}'";
+            await Task.Delay(1000);
+            ProgressValue += 10;
+            StateHasChanged();
         }
+
+        IsProcessing = false;
     }
 }
