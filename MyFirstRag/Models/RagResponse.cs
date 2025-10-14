@@ -1,4 +1,4 @@
-﻿namespace MyFirstRag;
+﻿namespace MyFirstRag.Models;
 
 public class RagResponse
 {

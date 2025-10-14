@@ -1,4 +1,6 @@
-﻿namespace MyFirstRag;
+﻿using MyFirstRag.Models;
+
+namespace MyFirstRag;
 
 internal class PromptBuilder
 {

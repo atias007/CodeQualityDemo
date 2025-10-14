@@ -1,10 +1,14 @@
 ﻿using Microsoft.SemanticKernel;
 using Microsoft.SemanticKernel.ChatCompletion;
 using Microsoft.SemanticKernel.Connectors.OpenAI;
+using MyFirstRag.Models;
 
 namespace MyFirstRag;
 
-internal class ChatService(string apiKey, EmbeddingService embeddingService, string chatModel = "gpt-4o-mini")
+internal class ChatService(
+    EmbeddingService embeddingService,
+    AppSettings appSettings,
+    IHttpClientFactory clientFactory)
 {
     /// <summary>
     /// Ask question with RAG pattern - retrieve relevant context and generate answer
@@ -108,10 +112,10 @@ internal class ChatService(string apiKey, EmbeddingService embeddingService, str
         chatHistory.AddSystemMessage(PromptBuilder.GetSystemMessage());
         chatHistory.AddUserMessage(prompt);
 
-        using var httpClient = HttpClientFactory.GetGetHttpClient();
+        using var httpClient = clientFactory.CreateClient("my-rag");
 
         var builder = Kernel.CreateBuilder();
-        builder.AddOpenAIChatCompletion(chatModel, apiKey, httpClient: httpClient);
+        builder.AddOpenAIChatCompletion(appSettings.ChatModel, appSettings.ApiKey, httpClient: httpClient);
         var kernel = builder.Build();
         var chatService = kernel.GetRequiredService<IChatCompletionService>();
         var result = await chatService.GetChatMessageContentAsync(chatHistory, settings);

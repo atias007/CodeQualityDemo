@@ -1,21 +1,21 @@
 ﻿using Microsoft.Extensions.AI;
 using Microsoft.SemanticKernel;
-using Microsoft.SemanticKernel.Embeddings;
+using MyFirstRag.Models;
 
 namespace MyFirstRag;
 
-internal class EmbeddingService(string apiKey, string embeddingModel = "text-embedding-ada-002")
+internal class EmbeddingService(AppSettings appSettings, IHttpClientFactory clientFactory)
 {
     // Create embeddings and store them with original text
     public async Task<List<VectorChunk>> CreateVectorStore(List<string> chunks)
     {
-        using var httpClient = HttpClientFactory.GetGetHttpClient();
+        using var httpClient = clientFactory.CreateClient("my-rag");
 
         var kernelBuilder = Kernel.CreateBuilder();
 #pragma warning disable SKEXP0010 // Type is for evaluation purposes only and is subject to change or removal in future updates. Suppress this diagnostic to proceed.
         kernelBuilder.AddOpenAIEmbeddingGenerator(
-            modelId: embeddingModel,
-            apiKey: apiKey,
+            modelId: appSettings.EmbeddingModel,
+            apiKey: appSettings.ApiKey,
             httpClient: httpClient);
 #pragma warning restore SKEXP0010 // Type is for evaluation purposes only and is subject to change or removal in future updates. Suppress this diagnostic to proceed.
 

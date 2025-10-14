@@ -1,4 +1,4 @@
-﻿namespace MyFirstRag;
+﻿namespace MyFirstRag.Models;
 
 // Class to store text chunks with their embeddings
 public class VectorChunk
