@@ -85,6 +85,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorApp1", "BlazorApp1\Bl
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyFirstRag", "MyFirstRag\MyFirstRag.csproj", "{17C93E8F-F997-45B0-B9C5-0B4FB3B5AF3F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AIVectorSearch", "AIVectorSearch\AIVectorSearch.csproj", "{AAE469A0-F87B-4F21-BD45-CAED65E4579B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -227,6 +229,10 @@ Global
 		{17C93E8F-F997-45B0-B9C5-0B4FB3B5AF3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{17C93E8F-F997-45B0-B9C5-0B4FB3B5AF3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{17C93E8F-F997-45B0-B9C5-0B4FB3B5AF3F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AAE469A0-F87B-4F21-BD45-CAED65E4579B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AAE469A0-F87B-4F21-BD45-CAED65E4579B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AAE469A0-F87B-4F21-BD45-CAED65E4579B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AAE469A0-F87B-4F21-BD45-CAED65E4579B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -245,6 +251,7 @@ Global
 		{D0B734B5-E747-4496-9E34-D1DF23618E11} = {F6EE8689-A29B-4C90-AE3C-A2D2F9F33C52}
 		{A33F4906-904B-4525-A47D-AFC158061FC8} = {36E8124D-AF03-48B1-A43E-8B14247B42B3}
 		{17C93E8F-F997-45B0-B9C5-0B4FB3B5AF3F} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{AAE469A0-F87B-4F21-BD45-CAED65E4579B} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B495776A-36F6-44BB-97A3-29D3A6670E4C}

@@ -1,4 +1,5 @@
 ﻿using MyFirstRag;
+using MyFirstRag.Extractors;
 using MyFirstRag.Models;
 
 const string pdfPath = @"c:\temp\coffee_machine.pdf";
@@ -30,14 +31,14 @@ catch (Exception ex)
     Console.WriteLine($"Error: {ex.Message}");
 }
 
-static async Task Example1BasicRAG(List<VectorChunk> chunks)
+static async Task Example1BasicRAG(List<VectorChunk> vectors)
 {
     Console.WriteLine("=== Example 1: Basic RAG Query ===");
     Console.WriteLine("Ask a question:\n");
     var question = Console.ReadLine() ?? throw new ArgumentNullException();
 
     var service = DependencyInjectionFactory.GetService<ChatService>();
-    var response = await service.AskQuestionWithRAGAsync(question, chunks, topK: 3);
+    var response = await service.AskQuestionWithRAGAsync(question, vectors, topK: 3);
 
     Console.WriteLine($"\nQuestion: {response.Question}");
     Console.WriteLine($"\nAnswer:\n{response.Answer}");

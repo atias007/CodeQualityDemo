@@ -2,7 +2,7 @@
 using UglyToad.PdfPig;
 using UglyToad.PdfPig.DocumentLayoutAnalysis.TextExtractor;
 
-namespace MyFirstRag;
+namespace MyFirstRag.Extractors;
 
 internal class PdfExtractor
 {
