@@ -131,7 +131,7 @@ static async Task<bool> CreateOpenSearchIndex(OpenSearchClient openSearchClient)
                     .Dimension(1536) // OpenAI text-embedding-3-small dimension
                     .Method(km => km
                         .Name("hnsw")
-                        .SpaceType("cosinesimil")
+                        .SpaceType("l2") //"cosinesimil"
                     //.Engine("nmslib")
                     )
                 )
