@@ -1,6 +1,4 @@
-﻿namespace MyFirstRag;
-
-internal class ChunksUtil
+﻿internal class ChunksUtil
 {
     // Split text into overlapping chunks
     public static List<string> SplitIntoChunks(string text, int chunkSize, int overlap)
