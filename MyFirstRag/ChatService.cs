@@ -6,7 +6,7 @@ using MyFirstRag.Models;
 namespace MyFirstRag;
 
 internal class ChatService(
-    EmbeddingService embeddingService,
+    OllamaEmbeddingService embeddingService,
     AppSettings appSettings,
     IHttpClientFactory clientFactory)
 {
@@ -112,7 +112,7 @@ internal class ChatService(
         chatHistory.AddSystemMessage(PromptBuilder.GetSystemMessage());
         chatHistory.AddUserMessage(prompt);
 
-        using var httpClient = clientFactory.CreateClient("my-rag");
+        using var httpClient = clientFactory.CreateClient("openai-client");
 
         var builder = Kernel.CreateBuilder();
         builder.AddOpenAIChatCompletion(appSettings.ChatModel, appSettings.ApiKey, httpClient: httpClient);
