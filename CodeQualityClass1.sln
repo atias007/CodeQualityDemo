@@ -93,6 +93,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AIVectorSearchWithLocalDb",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AIVectorSearchWithDuckDB", "AIVectorSearchWithDuckDB\AIVectorSearchWithDuckDB.csproj", "{D03F9E13-CE06-4E3C-B702-B2610BE1732A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MsAiAgent", "MsAiAgent\MsAiAgent.csproj", "{28033358-E461-4686-8349-7E57E0870282}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -251,6 +253,10 @@ Global
 		{D03F9E13-CE06-4E3C-B702-B2610BE1732A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D03F9E13-CE06-4E3C-B702-B2610BE1732A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D03F9E13-CE06-4E3C-B702-B2610BE1732A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{28033358-E461-4686-8349-7E57E0870282}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28033358-E461-4686-8349-7E57E0870282}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28033358-E461-4686-8349-7E57E0870282}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28033358-E461-4686-8349-7E57E0870282}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -272,6 +278,7 @@ Global
 		{AAE469A0-F87B-4F21-BD45-CAED65E4579B} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{880A49E3-ABC9-4393-B301-78C3FBC35C91} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{D03F9E13-CE06-4E3C-B702-B2610BE1732A} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{28033358-E461-4686-8349-7E57E0870282} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B495776A-36F6-44BB-97A3-29D3A6670E4C}
